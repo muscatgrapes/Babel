@@ -1,0 +1,558 @@
+/* 
+This stylesheet defines the styling configurations for the components inside 
+the landing-page.html. 
+
+The components styled within this file are described below. Note that all 
+selectors use the unique code assigned to each component in the landing-page.html 
+file.
+
+[TABLE OF CONTENTS]
+B.1 .hero-section
+    B.1.4 .hero-section-buttons
+    B.1.5 .dashboard
+B.2 .blue-gradient
+B.3 .employers
+    B.3.2 .employers-list
+    B.3.3 .logo
+    B.3.4 .logo img
+B.4 .top-courses
+    B.4.T .template
+        B.4.T.1 .gradient-fade-out
+        B.4.T.2 .template-text
+            B.4.T.2.1 .template-text p
+            B.4.T.2.2 .template-text h3
+            B.4.T.2.3 .template-text p
+            B.4.T.2.4 .course-tags 
+B.5 .reasons
+    B.5.2 .horizontally-scrollable
+B.6 .testimonials
+    B.6.2 .testimonials-container
+        B.6.2.2.2 .testimonial-author
+B.7 .questions
+    B.7.1 .section-heading-questions
+    B.7.2 .common-questions-container
+        B.7.2.1 details
+            B.7.2.1.1 .question
+            B.7.2.1.2 .answer
+    
+    @author margarita
+    @author jasmine
+    @author Marione-G
+*/
+
+/* Resets the default styling of all components */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+   [Component B]
+   This arranges components vertically using a flex layout. A 100px gap is
+   placed in between components for better spacing. 
+*/
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+/* 
+   [Component B.1] 
+   This arranges components vertically using a flex layout. A 20px gap is placed 
+   between components for better spacing and a 200px top margin is added to 
+   account for the fixed header positioned at the top (top: 0). 
+*/
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    height: 100%;
+    margin-top: 200px;
+    
+    overflow: hidden;
+}
+
+/* 
+   [Component B.1.4] 
+   This arranges components horizontally using a flex layout. A 10px top margin 
+   is added to provide additional spacing beyond the default spacing defined by 
+   the parent [.hero-section], which is 20px. This adjustment is made to improve 
+   optical symmetry, as a 20px spacing alone appears visually asymmetrical.
+*/
+.hero-section-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--BUTTON-GAP);
+
+    margin-top: 10px;
+}
+
+/* 
+   [Component B.1.5] 
+   This sets the z-index to 2 to place the photo above the [.blue-gradient], 
+   which has a z-index of 1. A 75px top margin is also added to provide additional 
+   spacing beyond the default spacing defined by the parent [.hero-section], which 
+   is 20px. Thus, the total spacing between this element and the component above it 
+   is 95px.
+*/
+.dashboard {
+    width: 800px;
+    margin-top: 75px;
+    z-index: 2;
+}
+
+/*
+   [Component B.2]
+   This sets the z-index to 1, positioning the element at the lowest level of the 
+   z-index stack. It uses absolute positioning to remove itself from the normal 
+   document flow and place itself at a specific coordinate on the webpage. This 
+   image is positioned 350px from the top.
+*/
+.blue-gradient {
+    position: absolute;
+    top: 350px;
+
+    width: 100%;
+
+    z-index: 1;
+}
+
+/*
+   [Component B.3] 
+   This arranges components vertically using a flex layout. A 50px gap is placed 
+   between components for better spacing. All contents are centered by setting
+   the align-items and justify-content properties to center.
+*/
+.employers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/*
+   [Component B.3.2]
+   This arranges components horizontally using a flex layout. A 20px gap is placed
+   between components for better spacing. The list-style is also set to none to remove
+   the default bullets of an unordered list. Additionally, the width is set to auto to 
+   allow the component to adjust its size according to the content.
+
+   The images inside the list are originally much larger than how they are displayed on 
+   the webpage and have varying dimensions. To resize the images to fit within their 
+   container while preserving their aspect ratio, object-fit is set to contain.
+*/
+.employers-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    list-style: none;
+    width: auto;
+    object-fit: contain;
+}
+
+/*
+   [Component B.3.3]
+   This arranges its contents (img) using flex layout. The contents are centered by 
+   setting the align-items and justify-content properties to center. The width and 
+   height are also defined to scale down the image. 
+*/
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 50px;
+}
+
+/*
+    [Component B.3.4]
+    The images inside the list are originally much larger than how they are displayed on 
+    the webpage and have varying dimensions. To resize the images to fit within their 
+    container [.logo] while preserving their aspect ratio, the max-width and max-height 
+    is set and the object-fit is set to contain. 
+*/
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/*
+    [Component B.4]
+    This arranges components horizontally using a flex layout. A 50px gap is placed
+    between components for better spacing. All components are centered by setting
+    the align-items and justify-content to center.
+*/
+.top-courses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/*
+    [Component B.4.1]
+    This arranges components horizontally using a flex layout. A 20px gap is placed
+    between components for better spacing. All components are centered by setting
+    the align-items and justify-content to center.
+*/
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*
+    [Component B.4.T]
+    This arranges components using a two-column grid layout. Both columns are allocated 
+    equal width. A 75px column gap is set to create horizontal spacing between the two 
+    columns. Additionally, 200px padding is added to the left and right sides.
+*/
+.template {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    column-gap: 75px;
+
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+/*
+   [Component B.4.T.1]
+   This arranges components vertically using a flex layout. A 20px gap is placed
+   between components for better spacing. The dimensions are also set to 500px to 
+   restrict the component size.
+
+   It uses a dark blue background (var(--DARK-BLUE)) and rounded corners (16px)
+   to create a soft card-like appearance. The overflow is set to hidden to ensure 
+   the effect follows the shape of the container. The position is also set to 
+   relative to allow for absolute positioning of internal elements if needed.
+*/
+.gradient-fade-out {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    position: relative;
+
+    width: 500px;
+    height: 500px;
+    padding: 50px;
+
+    background: var(--DARK-BLUE); 
+    border-radius: 16px;
+    overflow: hidden; 
+}
+
+/*
+    [Component B.4.T.1]
+    This creates a pseudo-element overlay for the gradient-fade-out component. The
+    ::before element is positioned absolutely and stretched to cover the entire parent
+    using inset: 0. It inherits the parent’s border-radius to ensure the overlay matches
+    the container’s rounded shape.
+     
+    An inset box-shadow is applied using var(--GRAYISH-BLUE), creating an inner glow
+    effect. The pointer-events is set also to none to ensure the overlay does not 
+    interfere with user interaction on underlying elements.
+*/
+.gradient-fade-out::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    box-shadow: inset 0 0 60px 20px var(--GRAYISH-BLUE);
+
+    pointer-events: none;
+}
+
+/*
+    [Component B.4.T.2]
+    This arranges components vertically using a flex layout. A 20px gap is placed
+    between components for better spacing. align-items is set to flex-start to align
+    components to the left. This is defined to prevent the button from stretching.
+    The width is also set to 500px to restrict the component size.
+*/
+.template-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    width: 500px;
+}
+
+/*
+    [Component B.4.T.2.1]
+    [Component B.4.T.2.2]
+    [Component B.4.T.2.3]
+    By default, the element-configuration.css sets the text-align to center.
+    To override, these values, the text-align property is set to left in this
+    stylesheet.
+*/
+.template-text h3, 
+.template-text p {
+    text-align: left;
+}
+
+/*
+   [Component B.4.T.2.4.1]
+   This arranges components horizontally using a flex layout. A 10px gap is placed
+   between components for better spacing. The width is also set to 500px to restrict 
+   the component size.
+*/
+.course-tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+
+    width: 500px;
+}
+
+/*
+   [Component B.5]
+   This arranges components vertically using a flex layout. A 50px gap is placed
+   between components for better spacing. The width is also set to 500px to restrict 
+   the component size. Additionally, 200px padding is added to the left and right sides.
+*/
+.reasons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+/*
+    [Component B.5.2] 
+    This creates a horizontally scrollable flex container using display: flex with nowrap.
+    A 25px gap is applied between items, and overflow-x: auto enables horizontal scrolling 
+    when needed. Padding adds horizontal spacing inside the container.
+    
+    Child elements use flex: 0 0 auto to maintain their natural size without shrinking.
+    Scrollbar is hidden for a cleaner appearance.
+*/
+.horizontally-scrollable {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+
+    padding: 0 20px;
+
+    max-width: 100%;
+    box-sizing: border-box;
+    scrollbar-width: none;      
+    -ms-overflow-style: none; 
+}
+
+.horizontally-scrollable > * {
+    flex: 0 0 auto;
+}
+
+/*
+    This scales down the dimensions of the .gradient-fade-out to 350px x 300px for 
+    styling purposes.
+*/
+.horizontally-scrollable .gradient-fade-out {
+    width: 350px;
+    height: 300px;
+}
+
+/*
+   [Component B.6]
+   This arranges components vertically using a flex layout. A 50px gap is placed
+   between components for better spacing. The width is also set to 500px to restrict 
+   the component size. Additionally, 200px padding is added to the left and right sides.
+*/
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+/*
+    [Component B.6.2]
+    This arranges components using a three-column grid layout. Both columns are allocated 
+    equal width. A 25px gap is set to create horizontal and vertical spacing between the cells. 
+    Additionally, 200px padding is added to the left and right sides.
+*/
+.testimonials-container { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+/*
+    [Component B.6.2.2.2]
+    This arranges components horizontally using a flex layout. A 20px gap is placed
+    between components for better spacing. 
+*/
+.testimonial-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+/*
+    This sets the width of the image to 55px to prevent stretching
+*/
+.testimonial-author img {
+    width: 55px;
+}
+
+/*
+    By default, the element-configuration.css sets the text-align to center.
+    To override these values, the text-align property is set to left in this
+    stylesheet.
+*/
+.testimonial-author-text h5 {
+    text-align: left;
+}
+
+/*
+    By default, the element-configuration.css sets the text-align to center and
+    the font-size of p to 16px. To override these values, the text-align property 
+    is set to left and the font-size is set to 14px in this stylesheet.
+*/
+.testimonial-author-text p {
+    font-size: 14px;
+    text-align: left;
+}
+
+/*
+    This scales down the dimensions of the .gradient-fade-out to 350px x 350px for 
+    styling purposes.
+*/
+.testimonials .gradient-fade-out {
+    width: 350px;
+    height: 350px;
+    justify-content: space-between;
+}
+
+/*
+    [Component B.7]
+    This arranges components using a two-column grid layout. Both columns are allocated 
+    equal width. Additionally, 200px padding is added to the left and right sides.
+*/
+.questions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+/*
+    [Component B.7.1]
+    By default, the element-configuration.css sets the text-align to center.
+    To override these values, the text-align property is set to left in this
+    stylesheet.
+*/
+.section-heading-questions h2, 
+.section-heading-questions p {
+    text-align: left;
+}
+
+/*
+    [Component B.7.2]
+    This arranges components vertically using a flex layout. A 15px gap is placed
+    between components for better spacing. 
+*/
+.common-questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/*
+    [Component B.7.2.1]
+    This arranges components vertically using a flex layout. A 10px gap is placed
+    between components for better spacing. A bottom border is added to create an
+    illusion or table rows.
+*/
+details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--LIGHT-GRAY);
+}
+
+/*
+    [Component B.7.2.1.1]
+    Makes the question appear clickable by setting the cursor to pointer. 
+    When clicked, this summary will show the .answer.
+*/
+.question {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::marker {
+  display: none;
+}
+
+.arrow {
+  margin-left: auto;
+}
+
+/*
+    [Component B.7.2.1.2]
+    This creates a soft card-like appearance where the answer to the question is
+    displayed. It also overrides the default values set by element-configuration.css.
+    to set the text-align to center. 
+*/
+.answer {
+    background: #101636;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.answer p {
+    text-align: left;
+}

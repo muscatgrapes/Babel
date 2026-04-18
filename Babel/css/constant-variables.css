@@ -1,0 +1,26 @@
+
+/*
+    These define global constants for use throughout the program. 
+    They ensure consistency across all values and make maintenance 
+    and future updates easier.
+    
+    @author margarita
+    @author jasmine
+    @author Marione-G
+*/
+
+:root {
+    --WHITE: #ffffff;
+    --LIGHT-GRAY: #9ea3bf;
+    --DARK-BLUE: #05071a;
+    --BRIGHT-BLUE: #3a6ef2;
+    --GRAYISH-BLUE: #1C244C;
+    --BLUE-GRADIENT: linear-gradient(to right, var(--GRAYISH-BLUE), var(--DARK-BLUE));
+    --BLUE-GRADIENT-BOTTOM: linear-gradient(to top, var(--GRAYISH-BLUE), var(--DARK-BLUE));
+    --MIDNIGHT-BLUE: #0a0e28;
+    --GREEN: #47cc88;
+    --FIXED-PADDING: 150px;
+    --BUTTON-GAP: 15px;
+    
+}
+

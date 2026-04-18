@@ -1,0 +1,378 @@
+/*    
+    @author margarita
+    @author jasmine
+    @author Marione-G
+*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: var(--DARK-BLUE);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 150px; 
+    z-index: 1000;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.search-filter {
+    margin-top: 110px;
+    padding-bottom: 50px;
+    padding-left: 150px;
+
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+}
+
+.main-content {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 50px;
+    padding-right: 150px;
+}
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.search-bar input {
+    flex: 1;           
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 10px 12px;
+
+    border: 1px solid var(--LIGHT-GRAY);
+    border-radius: 6px;
+
+    font-size: 14px;
+    outline: none;
+
+    box-sizing: border-box;
+    background: none;
+}
+
+.search-bar input:focus {
+    border-color: var(--BRIGHT-BLUE);
+    box-shadow: 0 0 5px var(--GRAYISH-BLUE);
+}
+
+.search-bar input,
+.search-bar input::placeholder {
+    font-family: "Sora", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--LIGHT-GRAY);
+}
+
+.search-bar .bright-blue-button {
+    padding: 0px 12px;
+    border-radius: 10px;
+}
+
+.dropdown select {
+    flex: 1;
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 12px 12px;
+
+    border: 1px solid var(--LIGHT-GRAY);
+    border-radius: 6px;
+
+    font-size: 14px;
+    outline: none;
+
+    background: none;
+    cursor: pointer;
+}
+
+.dropdown select:focus {
+    border-color: var(--BRIGHT-BLUE);
+    box-shadow: 0 0 5px var(--GRAYISH-BLUE);
+}
+
+.dropdown select {
+    font-family: "Sora", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--LIGHT-GRAY);
+}
+
+.dropdown select option {
+    background-color: var(--DARK-BLUE);
+    color: var(--LIGHT-GRAY);
+    border: 1px solid var(--LIGHT-GRAY);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+}
+
+.course-card {
+    width: 300px;
+    height: 325px;
+    border: 1px solid var(--LIGHT-GRAY);
+    border-radius: 12px;   
+    padding: 25px;
+    background: var(--BLUE-GRADIENT-BOTTOM);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.course-text .subtext {
+    font-size: 10px;
+    color: var(--BRIGHT-BLUE);
+}
+
+.course-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+
+.course-info .outlined-badge {
+    font-family: "Sora", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--LIGHT-GRAY);
+    padding: 5px 10px;
+}
+
+.course-card h4 {
+    font-size: 20px;
+    text-align: left;
+}
+
+.course-card p {
+    font-size: 14px;
+    text-align: left;
+}
+
+.filter-div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 1px solid var(--LIGHT-GRAY);
+    padding-top: 20px;
+}
+
+.filter-div h5 {
+    text-align: left;
+}
+
+.search-filter h4 {
+    text-align: left;
+    font-size: 20px;
+}
+
+.filter-div button {
+    border: 1px solid var(--BRIGHT-BLUE);
+    padding: 10px 10px;
+    border-radius: 7px;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-container label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+}
+
+.checkbox-container label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--LIGHT-GRAY);
+    border-radius: 4px;
+    background: none;
+}
+
+.checkbox-container input:checked + label::before {
+    background-color: var(--BRIGHT-BLUE);
+    border-color: var(--BRIGHT-BLUE);
+}
+
+.checkbox-container input:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.text-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    color: var(--BRIGHT-BLUE, blue);
+    cursor: pointer;
+
+    font-size: 10px;
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
+
+    display: inline; /* ensures no button-like box */
+}
+
+.text-button:hover {
+    text-decoration: underline;
+}
+
+.text-button.danger {
+    color: rgb(172, 14, 14);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    width: 550px;
+    padding: 30px;
+    border-radius: 8px;
+
+    background: var(--DARK-BLUE);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--WHITE);
+    margin-bottom: 25px;
+}
+
+.course-field {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.course-field label {
+    text-align: left;
+}
+
+.course-form-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: right;
+}
+
+.course-form-buttons button {
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+.course-field input, textarea {
+    flex: 1;           
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 7px 10px;
+
+    border: 1px solid var(--LIGHT-GRAY);
+    border-radius: 6px;
+
+    font-size: 12px;
+    outline: none;
+
+    box-sizing: border-box;
+    background: none;
+}
+
+.course-field input:focus,
+.course-field textarea:focus {
+    border-color: var(--BRIGHT-BLUE);
+    box-shadow: 0 0 5px var(--GRAYISH-BLUE);
+}
+
+.course-field input,
+.course-field textarea,
+.course-field input::placeholder,
+.course-field textarea::placeholder {
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--LIGHT-GRAY);
+}
+
+.course-field textarea {
+    height: 150px;
+    width: 100%;
+}

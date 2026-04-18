@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<Courses>
+    <Course>
+        <id>1</id>
+        <Type>Certificate</Type>
+        <Title>The Complete Full-Stack Web Development Bootcamp</Title>
+        <Description>Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, PostgreSQL, Web3 and DApps</Description>
+        <Price>Free</Price>
+        <Level>Beginner</Level>
+        <Duration>12 hours</Duration>
+    </Course>
+
+    <Course>
+        <id>2</id>
+        <Type>Certificate</Type>
+        <Title>MySQL Database Administration: Beginner SQL Database Design</Title>
+        <Description>Learn SQL for data analysis, relational database management and administration w/ MySQL Workbench (SQL DBA for beginners!)</Description>
+        <Price>Free</Price>
+        <Level>Beginner</Level>
+        <Duration>10 hours</Duration>
+    </Course>
+
+    <Course>
+        <id>3</id>
+        <Type>Certificate</Type>
+        <Title>Complete Artificial Intelligence and Python Developer Course</Title>
+        <Description>Master Machine Learning, Deep Learning, Data Science, NLP, and Computer Vision by Building Real-World AI Projects</Description>
+        <Price>Free</Price>
+        <Level>Beginner</Level>
+        <Duration>17 hours</Duration>
+    </Course>
+
+    <Course>
+        <id>4</id>
+        <Type>Certificate</Type>
+        <Title>Game Design and Development with Unity Specialization</Title>
+        <Description>Break into the video game industry with theoretical, technical, and practical knowledge from one of the world&#x2019;s best programs.</Description>
+        <Price>Free</Price>
+        <Level>Beginner</Level>
+        <Duration>18 hours</Duration>
+    </Course>
+
+    <Course>
+        <id>5</id>
+        <Type>Certificate</Type>
+        <Title>The Complete Flutter Guide: Build Android, iOS and Web apps</Title>
+        <Description>Flutter 2026: Build fast, production-grade apps for Android, iOS and Web with Flutter and Dart</Description>
+        <Price>Free</Price>
+        <Level>Beginner</Level>
+        <Duration>14 hours</Duration>
+    </Course>
+
+
+
+
+<Course><id>7</id><Title>Integrative Programming and Technologies</Title><Type>Course</Type><Level>Beginner</Level><Price>Free</Price><Duration>200 hours</Duration><Description>An online course where you will learn various integration techniques and tools.</Description>
+</Course><Course><id>8</id><Title>Event-Driven Programming</Title><Type>Course</Type><Level>Beginner</Level><Price>Free</Price><Duration>200 hours</Duration><Description>A self-paced, online course where you will explore the event-driven programming paradigm using Java.</Description></Course>
+<Course><id>6</id><Title>Web Systems and Technologiess</Title><Type>Course</Type><Level>Beginner</Level><Price>Free</Price><Duration>140 hours</Duration><Description>An introductory course on web development where you will learn the rudiments of HTML, CSS, JavaScript, PHP, and XML.</Description></Course>
+<Course><id>9</id><Title>Advanced Database Systems</Title><Type>Course</Type><Level>Beginner</Level><Price>Free</Price><Duration>75 hours</Duration><Description>A self-paced, online course where you will learn the fundamentals of MySQL. At the end of the course, you will create a simple CRUD application.</Description></Course></Courses>
